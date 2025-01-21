@@ -10,33 +10,52 @@
             background-image: url('2.jpg'); /* Замените на путь к вашему изображению */
             background-size: cover;
             background-position: center;
+            background-attachment: fixed; /* Фиксированный фон */
             margin: 0;
             padding: 0;
             color: #2c2c2c;
+            scroll-behavior: smooth; /* Плавная прокрутка */
+        }
+        nav {
+            background: rgba(50, 50, 50, 0.8);
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: center;
+        }
+        nav li {
+            margin: 0 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
         }
         header {
-            background: rgba(50, 50, 50, 0.8);
+            margin-top: 60px; /* Отступ сверху для фонового изображения */
             padding: 20px;
             text-align: center;
             border-radius: 10px;
-            margin: 20px;
+            background: rgba(50, 50, 50, 0.8);
             width: 80%;
+            margin: 20px auto;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
         section {
-            background: rgba(240, 240, 240, 0.9);
+            background: rgba(255, 255, 255, 0.9);
             padding: 20px;
             max-width: 800px;
-            margin: 20px;
+            margin: 20px auto;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s;
-        }
-        section:hover {
-            transform: scale(1.02);
         }
         h1 {
             color: #e63946;
@@ -46,8 +65,21 @@
             color: #777;
             font-size: 1.8em;
         }
-        ul {
-            list-style-type: square;
+        footer {
+            background: rgba(50, 50, 50, 0.8);
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            width: 80%;
+            margin: 20px auto;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
         button {
             background: #e63946;
@@ -56,45 +88,43 @@
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
-            transition: background 0.3s, transform 0.3s;
+            transition: background 0.3s;
         }
         button:hover {
             background: #d62839;
-            transform: scale(1.05);
         }
-        footer {
-            background: rgba(50, 50, 50, 0.8);
-            padding: 10px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            width: 80%;
-        }
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2em;
-            }
-            h2 {
-                font-size: 1.5em;
-            }
+        /* Стили для цветных пятен */
+        .color-swatch {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin: 0 5px;
         }
     </style>
 </head>
 <body>
 
-<header>
+<nav>
+    <ul>
+        <li><a href="#invitation">Приглашение</a></li>
+        <li><a href="#history">Наша история</a></li>
+        <li><a href="#program">Программа мероприятия</a></li>
+        <li><a href="#rsvp">RSVP</a></li>
+    </ul>
+</nav>
+
+<header id="invitation">
     <h1>Приглашение на свадьбу</h1>
     <h2>Камилы и Артёма</h2>
 </header>
 
-<section>
-    <h2>Дата и место</h2>
-    <p><strong>Дата:</strong> 17 августа 2025 года</p>
-    <p><strong>Место:</strong> [Укажите адрес и название места]</p>
-
+<section id="history">
     <h2>Наша история</h2>
     <p>Мы, Камила и Артём, встретились [опишите, как вы познакомились], и с тех пор наша жизнь наполнилась счастьем. Теперь мы рады разделить этот особенный момент с вами!</p>
+</section>
 
+<section id="program">
     <h2>Программа мероприятия</h2>
     <p>Мы будем счастливы видеть вас на нашей свадьбе!</p>
     <ul>
@@ -102,7 +132,21 @@
         <li>Банкет - [указать время]</li>
         <li>Развлечения и танцы - [указать время]</li>
     </ul>
+</section>
 
+<!-- Новый блок с пометкой для гостей -->
+<section>
+    <h2>Цветовая гамма мероприятия</h2>
+    <p>Пожалуйста, придерживайтесь следующих цветов:</p>
+    <div>
+        <span class="color-swatch" style="background-color: #FFD700;"></span> <!-- Желтый -->
+        <span class="color-swatch" style="background-color: #808080;"></span> <!-- Серый -->
+        <span class="color-swatch" style="background-color: #00BFFF;"></span> <!-- Голубой -->
+        <span class="color-swatch" style="background-color: #FF69B4;"></span> <!-- Розовый -->
+    </div>
+</section>
+
+<section id="rsvp">
     <h2>RSVP</h2>
     <p>Пожалуйста, подтвердите свое участие до [указать дату]!</p>
     <form>
