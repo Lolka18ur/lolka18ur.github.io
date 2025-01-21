@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Приглашение на свадьбу</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"> <!-- Подключение шрифта -->
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-image: url('2.jpg'); /* Замените на путь к вашему изображению */
+            background-image: url('4.jpg'); /* Замените на путь к вашему изображению */
             background-size: cover;
             background-position: center;
             background-attachment: fixed; /* Фиксированный фон */
@@ -23,6 +24,10 @@
             width: 100%;
             top: 0;
             z-index: 1000;
+            transition: background 0.3s;
+        }
+        nav:hover {
+            background: rgba(50, 50, 50, 1);
         }
         nav ul {
             list-style-type: none;
@@ -38,48 +43,50 @@
             color: white;
             text-decoration: none;
             font-size: 1.2em;
+            transition: color 0.3s;
         }
-        header {
-            margin-top: 60px; /* Отступ сверху для фонового изображения */
-            padding: 20px;
-            text-align: center;
-            border-radius: 10px;
-            background: rgba(50, 50, 50, 0.8);
-            width: 80%;
-            margin: 20px auto;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        nav a:hover {
+            color: #FFD700; /* Цвет при наведении */
         }
         section {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0,001);
             padding: 20px;
             max-width: 800px;
             margin: 20px auto;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+            animation: slideIn 0.5s;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
         h1 {
+            font-family: 'Dancing Script', cursive; /* Рукописный шрифт для заголовка */
             color: #e63946;
-            font-size: 2.5em;
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+            text-align: center;
         }
         h2 {
+            font-family: 'Dancing Script', cursive; /* Рукописный шрифт для имен */
             color: #777;
-            font-size: 1.8em;
-        }
-        footer {
-            background: rgba(50, 50, 50, 0.8);
-            padding: 10px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            width: 80%;
-            margin: 20px auto;
+            font-size: 2em;
+            margin-top: 20px;
+            text-align: center; /* Центрирование имен */
         }
         input, select {
             width: 100%;
             padding: 10px;
-            margin: 5px 0;
+            margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
+            transition: border 0.3s;
+        }
+        input:focus, select:focus {
+            border: 1px solid #e63946; /* Цвет рамки при фокусе */
+            outline: none; /* Убираем стандартный контур */
         }
         button {
             background: #e63946;
@@ -88,10 +95,11 @@
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.3s;
         }
         button:hover {
             background: #d62839;
+            transform: scale(1.05); /* Увеличение кнопки при наведении */
         }
         /* Стили для цветных пятен */
         .color-swatch {
@@ -113,60 +121,31 @@
     </ul>
 </nav>
 
-<header id="invitation">
+<section id="details">
     <h1>Приглашение на свадьбу</h1>
     <h2>Камилы и Артёма</h2>
-</header>
 
-<section id="details">
-    <h2>Наша история</h2>
-    <p>Мы, Камила и Артём, встретились [опишите, как вы познакомились], и с тех пор наша жизнь наполнилась счастьем. Теперь мы рады разделить этот особенный момент с вами!</p>
-
-    <h2>Программа мероприятия</h2>
+    <h2>План мероприятия</h2>
     <p>Мы будем счастливы видеть вас на нашей свадьбе!</p>
     <ul>
-        <li>Церемония - [указать время]</li>
-        <li>Банкет - [указать время]</li>
-        <li>Развлечения и танцы - [указать время]</li>
+        <li>15:30 - Сбор гостей</li>
+        <li>16:00 - Церемония бракосочетания</li>
+        <li>17:00 - Праздничный банкет</li>
     </ul>
 
     <h2>Цветовая гамма мероприятия</h2>
     <p>Пожалуйста, придерживайтесь следующих цветов:</p>
     <div>
-        <span class="color-swatch" style="background-color: #FFD700;"></span> <!-- Желтый -->
-        <span class="color-swatch" style="background-color: #808080;"></span> <!-- Серый -->
-        <span class="color-swatch" style="background-color: #00BFFF;"></span> <!-- Голубой -->
-        <span class="color-swatch" style="background-color: #FF69B4;"></span> <!-- Розовый -->
+        <span class="color-swatch" style="background-color: #FFD700;"></span>
+        <span class="color-swatch" style="background-color: #808080;"></span>
+        <span class="color-swatch" style="background-color: #00BFFF;"></span>
+        <span class="color-swatch" style="background-color: #FF69B4;"></span>
     </div>
+
+    <h2>Анкета участника мероприятия</h2>
+    <p>Пожалуйста, подтвердите свое участие до 01.01.2025</p>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfJlupzOk50t8gE_wEByPXb2ru8UTXP70tdD8-qJCCNuVbP4A/viewform?embedded=true" width="640" height="787" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
 </section>
-
-<section id="rsvp">
-    <h2>RSVP</h2>
-    <p>Пожалуйста, подтвердите свое участие до [указать дату]!</p>
-    <form>
-        <label for="name">Ваше имя:</label><br>
-        <input type="text" id="name" name="name"><br><br>
-
-        <label for="attendance">Будете ли вы присутствовать?</label><br>
-        <select id="attendance" name="attendance">
-            <option value="yes">Да</option>
-            <option value="no">Нет</option>
-        </select><br><br>
-
-        <label for="food">Что вы предпочитаете на ужин?</label><br>
-        <select id="food" name="food">
-            <option value="chicken">Курица</option>
-            <option value="fish">Рыба</option>
-        </select><br><br>
-
-        <button type="submit">Подтвердить</button>
-    </form>
-</section>
-
-<footer>
-    <p>Если у вас есть вопросы, не стесняйтесь связаться с нами по телефону или электронной почте!</p>
-    <p>Email: [ваш email] | Телефон: [ваш телефон]</p>
-</footer>
 
 </body>
 </html>
