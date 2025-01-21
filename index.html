@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение на свадьбу</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('2.jpg'); /* Замените на путь к вашему изображению */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            color: #2c2c2c;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            background: rgba(50, 50, 50, 0.8);
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 20px;
+            width: 80%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        section {
+            background: rgba(240, 240, 240, 0.9);
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+        section:hover {
+            transform: scale(1.02);
+        }
+        h1 {
+            color: #e63946;
+            font-size: 2.5em;
+        }
+        h2 {
+            color: #777;
+            font-size: 1.8em;
+        }
+        ul {
+            list-style-type: square;
+        }
+        button {
+            background: #e63946;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+        button:hover {
+            background: #d62839;
+            transform: scale(1.05);
+        }
+        footer {
+            background: rgba(50, 50, 50, 0.8);
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            width: 80%;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Приглашение на свадьбу</h1>
+    <h2>Камилы и Артёма</h2>
+</header>
+
+<section>
+    <h2>Дата и место</h2>
+    <p><strong>Дата:</strong> 17 августа 2025 года</p>
+    <p><strong>Место:</strong> [Укажите адрес и название места]</p>
+
+    <h2>Наша история</h2>
+    <p>Мы, Камила и Артём, встретились [опишите, как вы познакомились], и с тех пор наша жизнь наполнилась счастьем. Теперь мы рады разделить этот особенный момент с вами!</p>
+
+    <h2>Программа мероприятия</h2>
+    <p>Мы будем счастливы видеть вас на нашей свадьбе!</p>
+    <ul>
+        <li>Церемония - [указать время]</li>
+        <li>Банкет - [указать время]</li>
+        <li>Развлечения и танцы - [указать время]</li>
+    </ul>
+
+    <h2>RSVP</h2>
+    <p>Пожалуйста, подтвердите свое участие до [указать дату]!</p>
+    <form>
+        <label for="name">Ваше имя:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="attendance">Будете ли вы присутствовать?</label><br>
+        <select id="attendance" name="attendance">
+            <option value="yes">Да</option>
+            <option value="no">Нет</option>
+        </select><br><br>
+
+        <label for="food">Что вы предпочитаете на ужин?</label><br>
+        <select id="food" name="food">
+            <option value="chicken">Курица</option>
+            <option value="fish">Рыба</option>
+        </select><br><br>
+
+        <button type="submit">Подтвердить</button>
+    </form>
+</section>
+
+<footer>
+    <p>Если у вас есть вопросы, не стесняйтесь связаться с нами по телефону или электронной почте!</p>
+    <p>Email: [ваш email] | Телефон: [ваш телефон]</p>
+</footer>
+
+</body>
+</html>
